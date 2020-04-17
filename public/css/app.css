@@ -13967,6 +13967,10 @@ a {
   text-decoration: none;
 }
 
+.container {
+  max-width: 920px;
+}
+
 @media (min-width: 640px) {
   .sm\:sr-only {
     position: absolute;

@@ -13,16 +13,16 @@
     </head>
     <body class="font-sans">
         <div id="app">
-            <div class="container mx-auto">
-                <header class="py-6 mb-8">
-                    <h1>
-                        <img alt="SPA Assets" src="/images/logo.svg" />
-                    </h1>
-                </header>
+            <header class="py-6 px-8 mb-8" style="background: url('/images/splash.svg') 0 0px no-repeat;">
+                <h1>
+                    <img alt="SPA Assets" src="/images/logo.svg" />
+                </h1>
+            </header>
+            <div class="container px-8 pb-10">                
                 <main class="flex">
-                    <aside class="w-1/5">
-                        <section class="mb-8">
-                            <h5 class="uppercase font-bold mb-3">The Brand</h5>
+                    <aside class="w-64 pt-8">
+                        <section class="mb-10">
+                            <h5 class="uppercase font-bold mb-5 text-base">The Brand</h5>
                             <ul class="list-reset">
                                 <li class="text-sm leading-loose"><router-link class="text-black" to="/" exact>Logo</router-link></li>
                                 <li class="text-sm leading-loose"><router-link class="text-black" to="/logo-symbol">Logo Symbol</router-link></li>
@@ -31,7 +31,7 @@
                             </ul>
                         </section>
                         <section>
-                            <h5 class="uppercase font-bold mb-3">Doodle</h5>
+                            <h5 class="uppercase font-bold mb-5 text-base">Doodle</h5>
                             <ul class="list-reset">
                                 <li class="text-sm leading-loose"><router-link class="text-black" to="/mascot">Mascot</router-link></li>
                                 <li class="text-sm leading-loose"><router-link class="text-black" to="/illustration">Illustration</router-link></li>            
