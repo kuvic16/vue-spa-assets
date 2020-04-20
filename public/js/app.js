@@ -2032,23 +2032,34 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {},
   data: function data() {
     return {
-      series: 0,
-      lessons: 0
+      achievements: [],
+      token: "",
+      message: ""
     };
   },
-  created: function created() {
-    var _this = this;
+  methods: {
+    fetchAchievements: function fetchAchievements() {
+      var _this = this;
 
-    axios.get("http://localhost:8080/api/v1/stats").then(function (response) {
-      return response.data;
-    }).then(function (data) {
-      _this.series = data.series;
-      _this.lessons = data.lessons;
-    });
+      axios.get("http://localhost:8000/api/achievements?api_token=".concat(this.token))["catch"](function (error) {
+        _this.message = error.response.data.message;
+        _this.achievements = [];
+      }).then(function (response) {
+        _this.achievements = response.data;
+        _this.message = "";
+      });
+    }
   }
 });
 
@@ -2787,24 +2798,61 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", [
+    _c(
+      "h1",
+      { staticClass: "font-normal text-3xl text-gray-700 leading-none mb-8" },
+      [_vm._v("Achievements")]
+    ),
+    _vm._v(" "),
+    _c("input", {
+      directives: [
+        {
+          name: "model",
+          rawName: "v-model",
+          value: _vm.token,
+          expression: "token"
+        }
+      ],
+      staticClass: "border p-2 rounded w-full mb-8",
+      attrs: { type: "text", placeholder: "Your api token" },
+      domProps: { value: _vm.token },
+      on: {
+        keyup: function($event) {
+          if (
+            !$event.type.indexOf("key") &&
+            _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+          ) {
+            return null
+          }
+          return _vm.fetchAchievements($event)
+        },
+        input: function($event) {
+          if ($event.target.composing) {
+            return
+          }
+          _vm.token = $event.target.value
+        }
+      }
+    }),
+    _vm._v(" "),
+    _vm.message
+      ? _c("p", {
+          staticClass: "text-red-500 italic text-sm",
+          domProps: { textContent: _vm._s(_vm.message) }
+        })
+      : _vm._e(),
+    _vm._v(" "),
+    _c(
+      "ul",
+      _vm._l(_vm.achievements, function(achievement) {
+        return _c("li", { domProps: { textContent: _vm._s(achievement.name) } })
+      }),
+      0
+    )
+  ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [
-      _c(
-        "h1",
-        { staticClass: "font-normal text-3xl text-gray-700 leading-none mb-8" },
-        [_vm._v("Achievements")]
-      ),
-      _vm._v(" "),
-      _c("ul", [_c("li"), _vm._v(" "), _c("li")])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
