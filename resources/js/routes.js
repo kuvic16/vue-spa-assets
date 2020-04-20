@@ -7,6 +7,7 @@ import Illustration from "./components/Illustration";
 import Wallpapers from "./components/Wallpapers";
 import NotFound from "./components/NotFound";
 import SiteStats from "./components/SiteStats";
+import Achievements from "./components/Achievements";
 
 let LoadersAnimation = () =>
     import(/* webpackChunkName: "loaders" */ "./components/LoadersAnimation");
@@ -54,6 +55,10 @@ export default {
         {
             path: "/site-stats",
             component: SiteStats
+        },
+        {
+            path: "/achievements",
+            component: Achievements
         }
     ]
 };

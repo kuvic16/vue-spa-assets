@@ -36,4 +36,13 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * A user has multiple achievements
+     * 
+     * \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function achievements(){
+        return $this->hasMany('App\Achievement');
+    }
 }
