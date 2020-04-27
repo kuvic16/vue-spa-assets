@@ -1,14 +1,11 @@
 <template>
-  <h1 class="font-normal text-3xl text-gray-700 leading-none">Mascot</h1>
+    <h1 class="font-normal text-3xl text-gray-700 leading-none">Mascot</h1>
 </template>
 
 <script>
 export default {
-  mounted() {
-    console.log("Component mounted");
-  }
+    mounted() {
+        console.log("Component mounted");
+    }
 };
 </script>
-
-<style lang="stylesheet/css">
-</style>
