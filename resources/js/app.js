@@ -5,6 +5,7 @@ import VueRouter from "vue-router";
 import routes from "./routes";
 import axios from "axios";
 import ScrollLink from "./components/ScrollLink";
+import Dropdown from "./components/Dropdown";
 
 window.axios = axios;
 window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
@@ -12,6 +13,7 @@ window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
 Vue.use(VueRouter);
 
 Vue.component("scroll-link", ScrollLink);
+Vue.component("dropdown", Dropdown);
 let app = new Vue({
     el: "#app",
     router: new VueRouter(routes)
