@@ -15,10 +15,10 @@
           We are in corantaine for 2 months without job.
         </p>
         <template v-slot:footer>
-          <a
-            href="#"
+          <button
+            @click="$modal.hide('cancel-modal')"
             class="bg-gray-500 py-2 px-4 rounded-lg text-white hover:bg-gray-600 mr-2"
-          >Cancel</a>
+          >Cancel</button>
           <a
             href="#confirm-cancel-modal"
             class="bg-blue-500 py-2 px-4 rounded-lg text-white hover:bg-blue-600 mr-2"
