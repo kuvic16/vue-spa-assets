@@ -1,15 +1,15 @@
 <template>
   <div :id="name" class="overlay text-left">
-    <a href="#" class="cancel"></a>
+    <a href="#" class="cancel">X</a>
 
     <div class="modal">
       <slot></slot>
 
-      <!-- <footer class="flex mt-8">
+      <footer class="flex mt-8">
         <slot name="footer"></slot>
-      </footer>-->
+      </footer>
 
-      <a href="#" class="close">$times;</a>
+      <a href="#" class="close">X</a>
     </div>
   </div>
 </template>
@@ -63,5 +63,9 @@ export default {
   position: absolute;
   width: 100%;
   height: 100%;
+}
+
+footer:empty {
+  display: none;
 }
 </style>
