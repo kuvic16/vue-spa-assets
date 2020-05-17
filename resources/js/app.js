@@ -10,6 +10,7 @@ import Visible from "./components/Visible";
 // import Modal from "./components/Modal";
 import Modal from "./plugins/modal/ModalPlugin";
 import ConfirmDialog from "./components/ConfirmDialog";
+import ConfirmButton from "./components/ConfirmButton";
 
 window.axios = axios;
 window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
@@ -22,6 +23,7 @@ Vue.component("dropdown", Dropdown);
 Vue.component("visible", Visible);
 //Vue.component("modal", Modal);
 Vue.component("confirm-dialog", ConfirmDialog);
+Vue.component("confirm-button", ConfirmButton);
 let app = new Vue({
     el: "#app",
     router: new VueRouter(routes),
