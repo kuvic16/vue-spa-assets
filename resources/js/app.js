@@ -11,6 +11,8 @@ import Visible from "./components/Visible";
 import Modal from "./plugins/modal/ModalPlugin";
 import ConfirmDialog from "./components/ConfirmDialog";
 import ConfirmButton from "./components/ConfirmButton";
+import Tabs from "./components/Tabs";
+import Tab from "./components/Tab";
 
 window.axios = axios;
 window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
@@ -24,6 +26,8 @@ Vue.component("visible", Visible);
 //Vue.component("modal", Modal);
 Vue.component("confirm-dialog", ConfirmDialog);
 Vue.component("confirm-button", ConfirmButton);
+Vue.component("tabs", Tabs);
+Vue.component("tab", Tab);
 let app = new Vue({
     el: "#app",
     router: new VueRouter(routes),
